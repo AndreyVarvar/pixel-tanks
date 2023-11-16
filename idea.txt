@@ -1,0 +1,9 @@
+You are playing against someone (1 or more people, but only 1v1 for now)
+
+All the sprites are using sprite-stacking, so it looks 3D
+
+The game is turn based combat
+During your move you have an option to:
+ move (there is some radius of where you can move)
+ shoot (idk)
+ use something (like power up or healing idk)
