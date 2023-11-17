@@ -1,4 +1,5 @@
 from src.game import Game
 
-PixelTanks = Game()
-PixelTanks.run()
+if __name__ == '__main__':
+    PixelTanks = Game()
+    PixelTanks.run()

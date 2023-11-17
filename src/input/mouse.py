@@ -2,7 +2,9 @@ import pygame as pg
 
 
 class Mouse:
-    def __init__(self):
+    def __init__(self, cursor_image=None):
+        # -------MOUSE-PART---------
+        # the physical part: how are the inputs from the mouse interpreted?
         self.mouse_pos = (0, 0)
         self.mouse_pressed = []
 
@@ -36,6 +38,14 @@ class Mouse:
             "move state": self.mouse_pos_states[self.idle],
             "pos change": (0, 0)
         }
+
+        # -------CURSOR-PART--------
+        # basically cursor is what we see: the image of the cursor. Code below has to control the way that image behaves (not the position, the MOUSE part controls that)
+        self.focused = False
+        self.cursor_image = cursor_image
+
+    def update(self):
+        self.focused = pg.mouse.get_focused()
 
     def handle_events(self, events) -> None:
         # first, make sure the press state and everythign else is reset
